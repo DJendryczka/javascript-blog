@@ -44,7 +44,7 @@ function titleClickHandler(event){
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+  optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list';
 
 
@@ -107,14 +107,19 @@ function generateTags(){
   /* START LOOP: for every article: */
 
   for(let link of links){
+    link.addEventListener('click', titleClickHandler);
 
     /* find tags wrapper */
 
     const tagsWrapper = article.querySelector(optArticleTagsSelector);
-  }
+
     /* make html variable with empty string */
 
+    let html = '';
+
     /* get tags from data-tags attribute */
+
+    const articleTags = clickedElement.getAttribute('href');
 
     /* split tags into array */
 
@@ -129,6 +134,7 @@ function generateTags(){
     /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+  }
 }
 
 generateTags();
