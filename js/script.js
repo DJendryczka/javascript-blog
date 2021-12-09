@@ -148,15 +148,15 @@ function generateTags(){
 
       html = html + HTML;
 
-       /* [NEW] check if this link is NOT already in allTags */
+      /* [NEW] check if this link is NOT already in allTags */
 
-       if(allTags.indexOf(linkHTML) == -1){
+      if(allTags.indexOf(linkHTML) == -1){
 
         /* [NEW] add generated code to allTags array */
 
         allTags.push(linkHTML);
 
-       }
+      }
 
       /* END LOOP: for each tag */
 
@@ -167,15 +167,15 @@ function generateTags(){
   }
   /* END LOOP: for every article: */
 
-   /* [NEW] find list of tags in right column */
+  /* [NEW] find list of tags in right column */
 
-   const tagList = document.querySelector(optTagsListSelector);
+  const tagList = document.querySelector(optTagsListSelector);
 
-   /* [NEW] add html from allTags to tagList */
-   
-   tagList.innerHTML = allTags.join(' ');
+  /* [NEW] add html from allTags to tagList */
 
-}
+  tagList.innerHTML = allTags.join(' ');
+
+// }
 
 generateTags();
 
@@ -377,4 +377,3 @@ function authorClickHandler(event){
 
 
 }
-
