@@ -319,7 +319,7 @@ function authorClickHandler(event){
 
   /* find all tag links with class active */
 
-  const activeTagLinks = document.querySelectorAll('a.active[href^="#tag-"]');
+  const activeTagLinks = document.querySelectorAll('a.active[href="#tag-"]');
 
   /* START LOOP: for each active tag link */
 
