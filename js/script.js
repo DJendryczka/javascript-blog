@@ -176,6 +176,10 @@ function generateTags(){
 
   const tagList = document.querySelector(optTagsListSelector);
 
+  const tagsParams = calculateTagsParams(allTags);
+  console.log('tagsParams', tagsParams);
+  
+
   /* [NEW] create variable for all links HTML code */
 
   let allTagsHTML = '';
