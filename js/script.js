@@ -150,7 +150,7 @@ function generateTags(){
 
       /* [NEW] check if this link is NOT already in allTags */
 
-      if(!allTags.hasOwnProperty(tag)){
+      if(Object.prototype.hasOwnProperty.call(allTags,'tag')){
 
         /* [NEW] add tag to allTags objects */
 
@@ -176,9 +176,9 @@ function generateTags(){
 
   const tagList = document.querySelector(optTagsListSelector);
 
-  const tagsParams = calculateTagsParams(allTags);
-  console.log('tagsParams', tagsParams);
-  
+   const tagsParams = calculateTagsParams(allTags);
+   console.log('tagsParams', tagsParams);
+
 
   /* [NEW] create variable for all links HTML code */
 
