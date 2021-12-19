@@ -104,8 +104,18 @@ for (let link of links) {
   link.addEventListener('click', titleClickHandler);
 }
 
-function calculateTagsParams(allTags) {
-  console.log(allTags);
+function calculateTagsParams(tags) {
+  const params = { min: 0, max: 999999 };
+  for (let tag in tags) {
+    console.log(tag + ' is used' + tags[tag] + 'times');
+    if (tags[tag] > params.max) {
+      params.max = tags[tag];
+    }
+    if (tags[tag] < params.min) {
+      params.min = tags[tag];
+    }
+  }
+  return params;
 }
 
 function generateTags() {
