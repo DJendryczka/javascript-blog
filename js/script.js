@@ -119,13 +119,13 @@ function calculateTagsParams(tags) {
   return params;
 }
 
- function calculateTagClass(count, params){
+function calculateTagClass(count, params){
   const normalizedCount = count - params.min;
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
   return optCloudClassPrefix + classNumber;
- }
+}
 
 function generateTags() {
   /* [NEW] create a new variable allTags with an empty object */
@@ -326,8 +326,13 @@ function generateAuthors() {
 
     /* generate HTML of the link */
 
-    const linkHTMLData = {id: 'author-' + author, title: author};
-    const linkHTML = templates.authorLink(linkHTMLData);
+    //const linkHTMLData = {id: 'author-' + author, title: author};
+    const linkHTML =
+    '<li><a href="#author-' +
+    author +
+    '"><span>' +
+    author +
+    '</span></a></li>';
 
     if(!allAuthors[author]) {
 
@@ -350,6 +355,7 @@ function generateAuthors() {
   /* [NEW] find list of author in right column */
 
   const authorList = document.querySelector(optAuthorsListSelector);
+  console.log(authorList);
 
   /* [NEW] create variable for all links HTML code */
 
@@ -372,8 +378,8 @@ function generateAuthors() {
 
   /*[NEW] add HTML from allAuthorsHTML to authorList */
 
-  authorList.innerHTML = templates.authorListLink(allAuthorsData);
-  console.log('allAuthorsData', allAuthorsData);
+  // authorList.innerHTML = templates.authorListLink(allAuthorsData);
+  // console.log('allAuthorsData', allAuthorsData);
 }
 
 generateAuthors();
