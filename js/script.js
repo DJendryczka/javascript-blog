@@ -219,7 +219,7 @@ function generateTags() {
 
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTags */
-    const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="'+calculateTagClass(allTags[tag], tagsParams)+'"><span>' + tag + ' ('+allTags[tag]+')' + '</span></a></li> ';
+    const tagLinkHTML = `<li><a href="#tag-${tag}" class="${calculateTagClass(allTags[tag], tagsParams)}"><span>${tag} (${allTags[tag]})</span></a></li> `;
     // '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
     allTagsData.tags.push({
       tag: tag,
@@ -389,16 +389,12 @@ function generateAuthors() {
     /* [NEW] generate code of a link and add it to allAuthorsHTML */
 
 
-    const authorLinkHtml = '<li><a class="' + calculateAuthorClass(allAuthors[author], authorsParams) + '" href="#author-' +
-    author +
-    '"><span>' +
-    author + '('+allAuthors[author]+')' +
-    '</span></a></li>';
+    const authorLinkHTML = `<li><a href="#author-${author}">${author}</a>(${allAuthors[author]})</li>`;
 
     allAuthorsData.authors.push({
       author:author,
       count: allAuthors[author],
-      className:calculateAuthorClass(allAuthors[author], authorsParams)
+      
     });
 
     // allAuthorsHtml += authorLinkHtml;
