@@ -210,7 +210,8 @@ function generateTags() {
 
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTags */
-    const tagLinkHTML = '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
+    const tagLinkHTML = '<li><a href="#tag-' + tag + '" class="'+calculateTagClass(allTags[tag], tagsParams)+'"><span>' + tag + ' ('+allTags[tag]+')' + '</span></a></li> ';
+    // '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
     console.log('tagLinkHTML:',tagLinkHTML);
     allTagsHTML += tagLinkHTML;
 
@@ -359,25 +360,30 @@ function generateAuthors() {
 
   /* [NEW] create variable for all links HTML code */
 
-  const allAuthorsData = {authors: []};
+  // const allAuthorsData = {authors: []}; kolejny submodol
 
   /* [NEW] START LOOP: for each author in allAuthors: */
+let allAuthorsHtml = '';
 
   for(let author in allAuthors){
 
     /* [NEW] generate code of a link and add it to allAuthorsHTML */
 
-    allAuthorsData.authors.push({
-      author: author,
-      count: allAuthors[author]
-    });
 
+    const authorLinkHtml = '<li><a href="#author-' +
+    author +
+    '"><span>' +
+    author + '('+allAuthors[author]+')' +
+    '</span></a></li>';
+
+    allAuthorsHtml += authorLinkHtml;
 
   /* [NEW] END LOOP: for each author in allAuthors: */
   }
 
   /*[NEW] add HTML from allAuthorsHTML to authorList */
 
+authorList.innerHTML = allAuthorsHtml;
   // authorList.innerHTML = templates.authorListLink(allAuthorsData);
   // console.log('allAuthorsData', allAuthorsData);
 }
