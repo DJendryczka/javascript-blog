@@ -378,7 +378,7 @@
         </main>
       </div>
     </div>
-    <script id="template-authorcloud-link" type="text/x-handlebars-template">
+    <script id="template-author-cloud-link" type="text/x-handlebars-template">
       {{#each authors}}
       <li><a href="#author-{{ author }}" class ="{{className}}"><span>{{ author }} ({{count}})</span></a></li>
       {{/each}}
@@ -387,9 +387,6 @@
       {{#each tags}}
       <li><a href="#tag-{{ tag }}" class="{{ className}}"><span>{{ tag}} ({{count}})</span></a></li>
       {{/each}}
-    </script>
-    <script id="template-cloud-link" type="text/x-handlebars-template">
-      <li><a href="#author{{ id }}"><span>{{ title }}</span></a></li>
     </script>
     <script id="template-author-link" type="text/x-handlebars-template">
       <li><a href="#author{{ id }}"><span>{{ title }}</span></a></li>
