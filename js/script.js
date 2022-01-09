@@ -1,5 +1,9 @@
 'use strict';
 
+const templates = {
+  articleLink: Handlebars.compile(document.querySelector('#template-article-link').innerHTML),
+  articleLink: Handlebars.compile(document.querySelector('#template-tag-link').innerHTML)
+};
 function titleClickHandler(event) {
   event.preventDefault();
   const clickedElement = this;
@@ -80,14 +84,14 @@ function generateTitleLinks(customSelector = '') {
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
     /* create HTML of the link */
-
-    const linkHTML =
-      '<li><a href="#' +
-      articleId +
-      '"><span>' +
-      articleTitle +
-      '</span></a></li>';
-    console.log(linkHTML);
+    const linkHTMLData = {id: articleId, title: articleTitle};
+    const linkHTML = templates.articleLink(linkHTMLData);
+    // const linkHTML =
+    //   '<li><a href="#' +
+    //   articleId +
+    //   '"><span>' +
+    //   articleTitle +
+    //   '</span></a></li>';
 
     /* insert link into titleList */
 
@@ -166,9 +170,11 @@ function generateTags() {
 
       /* generate HTML of the link */
 
-      let linkHtml =
-        '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
-      console.log('htmllink', linkHtml);
+      const linkHTMLData = {id: tag, title: tag};
+      const linkHtml = templates.articleLink(linkHTMLData);
+      // let linkHtml =
+      //   '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
+      // console.log('htmllink', linkHtml);
 
       /* add generated code to html variable */
 
