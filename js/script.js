@@ -341,7 +341,7 @@ function generateAuthors() {
 
     //const linkHTMLData = {id: 'author-' + author, title: author};
 
-    const linkHTMLData = {id: authorWrapper, title: author};
+    const linkHTMLData = {id: author, title: author};
     const linkHTML = templates.authorLink(linkHTMLData);
     // const linkHTML =
     // '<li><a href="#author-' +
