@@ -101,17 +101,17 @@ function generateTitleLinks(customSelector = '') {
     html = html + linkHTML;
   }
   titleList.innerHTML = html;
-  // console.log(html);
+
+  const links = document.querySelectorAll('.titles a');
+
+  for (let link of links) {
+    link.addEventListener('click', titleClickHandler);
+  }
 }
 
 generateTitleLinks();
 
-const links = document.querySelectorAll('.titles a');
-console.log(links);
 
-for (let link of links) {
-  link.addEventListener('click', titleClickHandler);
-}
 
 function calculateTagsParams(tags) {
   const params = { max: 0, min: 999999 };
