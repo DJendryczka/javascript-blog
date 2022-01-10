@@ -133,10 +133,8 @@ function calculateTagClass(count, params){
   const classNumber = Math.floor(percentage * (optCloudClassCount - 1) + 1);
   return optCloudClassPrefix + classNumber;
 }
-
 function generateTags() {
   /* [NEW] create a new variable allTags with an empty object */
-
   let allTags = {};
 
   /* find all articles */
@@ -173,7 +171,7 @@ function generateTags() {
 
       /* generate HTML of the link */
 
-      const linkHTMLData = {id: tag, title: tag};
+      const linkHTMLData = {id: articleTags, title: tag};
       const linkHtml = templates.tagLink(linkHTMLData);
       // let linkHtml =
       //   '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
@@ -219,7 +217,7 @@ function generateTags() {
 
   for (let tag in allTags) {
     /* [NEW] generate code of a link and add it to allTags */
-    const tagLinkHTML = `<li><a href="#tag-${tag}" class="${calculateTagClass(allTags[tag], tagsParams)}"><span>${tag} (${allTags[tag]})</span></a></li> `;
+    // const tagLinkHTML = `<li><a href="#tag-${tag}" class="${calculateTagClass(allTags[tag], tagsParams)}"><span>${tag} (${allTags[tag]})</span></a></li> `;
     // '<li>' + calculateTagClass(allTags[tag], tagsParams) + '</li>';
     allTagsData.tags.push({
       tag: tag,
@@ -343,7 +341,7 @@ function generateAuthors() {
 
     //const linkHTMLData = {id: 'author-' + author, title: author};
 
-    const linkHTMLData = {id: author, title: author};
+    const linkHTMLData = {id: authorWrapper, title: author};
     const linkHTML = templates.authorLink(linkHTMLData);
     // const linkHTML =
     // '<li><a href="#author-' +
@@ -387,7 +385,7 @@ function generateAuthors() {
     /* [NEW] generate code of a link and add it to allAuthorsHTML */
 
 
-    const authorLinkHTML = `<li><a href="#author-${author}">${author}</a>(${allAuthors[author]})</li>`;
+    // const authorLinkHTML = `<li><a href="#author-${author}">${author}</a>(${allAuthors[author]})</li>`;
 
     allAuthorsData.authors.push({
       author:author,

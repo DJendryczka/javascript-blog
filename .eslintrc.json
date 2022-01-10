@@ -1,4 +1,7 @@
 {
+  "globals": {
+    "Handlebars": false
+  },
   "env": {
       "browser": true,
       "es6": true
@@ -7,14 +10,13 @@
   "parserOptions": {
       "ecmaVersion": 2015
   },
-  "globals": {
-    "Handlebars": false
-  },
+
   "rules": {
       "indent": [
           "error",
           2
       ],
+
       "linebreak-style": [
           "off"
       ],
