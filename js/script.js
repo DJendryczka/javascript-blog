@@ -171,7 +171,7 @@ function generateTags() {
 
       /* generate HTML of the link */
 
-      const linkHTMLData = {id: articleTags, title: tag};
+      const linkHTMLData = {id: tag, title: tag};
       const linkHtml = templates.tagLink(linkHTMLData);
       // let linkHtml =
       //   '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
